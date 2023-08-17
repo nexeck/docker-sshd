@@ -35,10 +35,11 @@ then
     mkdir -p "/home/${SSH_USERNAME}/.ssh"
     curl "${SSH_PUB_KEYS_URL}" --output "/home/${SSH_USERNAME}/.ssh/authorized_keys"
 
-    chown -R ${SSH_USERNAME}:${SSH_USERNAME} "/home/${SSH_USERNAME}"
     chmod 700 "/home/${SSH_USERNAME}/.ssh"
     chmod 644 "/home/${SSH_USERNAME}/.ssh/authorized_keys"
 fi
+
+chown -R ${SSH_USERNAME}:${SSH_USERNAME} "/home/${SSH_USERNAME}"
 
 # do not detach (-D), log to stderr (-e), passthrough other arguments
 exec /usr/sbin/sshd -D -e "$@"
