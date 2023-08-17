@@ -11,6 +11,8 @@ echo "Adding user ${SSH_USERNAME}"
 adduser -D -s /bin/ash "${SSH_USERNAME}"
 passwd -u "${SSH_USERNAME}"
 
+echo "UserID: $(id -u ${SSH_USERNAME}) GroupID: $(id -g ${SSH_USERNAME})"
+
 if test -n "${USER_DIRS_TO_CREATE}"
 then
     dirs=$(echo "${USER_DIRS_TO_CREATE}" | tr "," "\n")
