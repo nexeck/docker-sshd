@@ -1,4 +1,4 @@
-FROM alpine:3.20
+FROM alpine:3.23
 
 ENV SSH_USERNAME anon
 ENV SSH_PASSWORD ""
