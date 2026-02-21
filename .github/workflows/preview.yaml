@@ -1,4 +1,4 @@
-name: Build
+name: Preview
 on:
   pull_request:
 
